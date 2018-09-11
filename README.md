@@ -1,21 +1,21 @@
 # Store
+This application implements a checkout process.
 
-**TODO: Add description**
+* How to install Elixir? https://elixir-lang.org/install.html
+* After installing, clone this project and install dependencies with `mix deps.get`
+* Run tests with `mix test`
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `store` to your list of dependencies in `mix.exs`:
+## USAGE
 
 ```elixir
-def deps do
-  [
-    {:store, "~> 0.1.0"}
-  ]
-end
+voucher = Store.Product.new("VOUCHER", "Voucher", 750)
+# %Store.Product{
+#     code: "VOUCHER",
+#     name: "Voucher",
+#     price: %Money{amount: 750, currency: :EUR}
+# }
+
+store = Store.new(pricing_rules)
+store.scan(voucher)
+total = store.total()
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/store](https://hexdocs.pm/store).
-

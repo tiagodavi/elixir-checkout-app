@@ -22,7 +22,8 @@ defmodule Store.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:credo, "~> 0.10.0", only: [:dev, :test], runtime: false}
+      {:credo, "~> 0.10.0", only: [:dev, :test], runtime: false},
+      {:money, "~> 1.2.1"}
     ]
   end
 end
