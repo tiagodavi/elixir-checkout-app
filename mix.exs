@@ -23,7 +23,8 @@ defmodule Store.MixProject do
   defp deps do
     [
       {:credo, "~> 0.10.0", only: [:dev, :test], runtime: false},
-      {:money, "~> 1.2.1"}
+      {:money, "~> 1.2.1"},
+      {:dialyxir, "~> 0.4", only: [:dev]}
     ]
   end
 end

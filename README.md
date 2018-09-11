@@ -4,8 +4,8 @@ Elixir Application that implements a checkout process.
 * How to install Elixir? https://elixir-lang.org/install.html
 * After installing, clone this project and install dependencies with `mix deps.get`
 * Run tests with `mix test`
-* Format your code with `mix format`
-* Check refactoring opportunities with `mix credo --strict`
+* (Optional) Format your code with `mix format`
+* (Optional) Check refactoring opportunities with `mix credo --strict`
 * Prepare for running `iex -S mix`
 
 ### Usage
@@ -44,6 +44,7 @@ Store.total() #"74.50€"
 - Agent instead of GenServer -> Agent is simpler to store state
 - Credo -> Just to ensure code quality
 - Format -> Just to ensure code quality
+- Dialyzer -> Just to ensure code quality
 
 ### Settings
 
