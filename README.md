@@ -22,7 +22,7 @@ store.scan(voucher)
 total = store.total()
 ```
 
-### Settings:
+### Settings
 
   - This project uses [`Credo`](https://github.com/rrrene/credo) and [`Formatter`](https://medium.com/blackode/code-formatter-the-big-feature-in-elixir-v1-6-0-f6572061a4ba) to ensure quality
   - Created on Mac OS Sierra 10.12.2
