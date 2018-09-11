@@ -7,7 +7,7 @@ Elixir Application that implements a checkout process.
 * Format your code with `mix format`
 * Check refactoring opportunities with `mix credo --strict`
 
-## USAGE
+### Usage
 
 ```elixir
 voucher = Store.Product.new("VOUCHER", "Voucher", 750)
