@@ -6,21 +6,44 @@ Elixir Application that implements a checkout process.
 * Run tests with `mix test`
 * Format your code with `mix format`
 * Check refactoring opportunities with `mix credo --strict`
+* Prepare for running `iex -S mix`
 
 ### Usage
 
 ```elixir
-voucher = Store.Product.new("VOUCHER", "Voucher", 750)
-# %Store.Product{
-#     code: "VOUCHER",
-#     name: "Voucher",
-#     price: %Money{amount: 750, currency: :EUR}
-# }
+voucher1 = Store.Product.new("VOUCHER", "voucher", 5_00)
+voucher2 = Store.Product.new("VOUCHER", "voucher", 5_00)
+voucher3 = Store.Product.new("VOUCHER", "voucher", 5_00)
 
-store = Store.new(pricing_rules)
-store.scan(voucher)
-total = store.total()
+tshirt1 = Store.Product.new("TSHIRT", "T-Shirt ", 20_00)
+tshirt2 = Store.Product.new("TSHIRT", "T-Shirt ", 20_00)
+tshirt3 = Store.Product.new("TSHIRT", "T-Shirt ", 20_00)
+
+mug = Store.Product.new("MUG", "Coffee Mug", 7_50)
+
+Store.add_rule(Store.Rules.MarketingRule)
+Store.add_rule(Store.Rules.CFORule)
+
+Store.scan(voucher1)
+Store.scan(voucher2)
+Store.scan(voucher3)
+
+Store.scan(tshirt1)
+Store.scan(tshirt2)
+Store.scan(tshirt3)
+
+Store.scan(mug)
+
+Store.total() #"74.50€"
 ```
+
+### Why?
+
+- Money type instead of :float -> :float is a bad decision for money. Money type is safer
+- RuleBehavior -> It's easy to create a new rule
+- Agent instead of GenServer -> Agent is simpler to store state
+- Credo -> Just to ensure code quality
+- Format -> Just to ensure code quality
 
 ### Settings
 
